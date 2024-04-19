@@ -8,13 +8,13 @@ import { SearchResponse } from './search-response';
 })
 export class InsuranceService {
 
-  //private baseUrl:string="http://localhost:8085";
+  private baseUrl:string="http://localhost:8085";
 
   constructor(private httpClient:HttpClient) {
   
    }
    getPlanNames() : Observable<any>{
-    return this.httpClient.get<any>("http://localhost:8085/plan-names");
+    return this.httpClient.get<any>(`${this.baseUrl}/plan-names`);
   }
   getPlanStatus() : Observable<any>{
     return this.httpClient.get<any>("http://localhost:8085/plan-status");
